@@ -1,0 +1,25 @@
+GETTING STARTED
+1) run `npm install`
+2) run `mongod --dbpath db` from app directory
+
+
+TO POST A BLOG POST
+curl -X POST 0.0.0.0:3000/post --data "title=SOME_TITLE&text=BLAHBLAHBLAHBLAHBLAH"
+
+TO SHOW ALL POSTS
+curl -X  GET 0.0.0.0:3000/api/articles
+
+TO DELETE
+curl -X DELETE 0.0.0.0:3000/api/articles/ENTER_BLOG_ID
+EXAMPLE:
+    curl -X DELETE 0.0.0.0:3000/api/articles/54c2cfab0845ec03449bc7
+
+TO ADD a Comment
+curl -X PUT http://localhost:3000/api/articles/ENTER_BLOG_ID --data "title=BLOC_TITLE&comments=This_IS_MY_COMMENT"
+EXAMPLE:
+    curl -X PUT http://localhost:3000/api/articles/54c2cfab0845ec03449bc7 --data "title=SOME_TITLE&comments=This_IS_MY_COMMENT"
+
+TO DELETE COMMENTS
+curl -X DELETE 0.0.0.0:3000/api/articles/ENTER_BLOG_ID/comments --data "comments=ENTER_COMMENT_TO_DELETE" 
+EXAMPLE:
+    curl -X DELETE 0.0.0.0:3000/api/articles/54c2cfab0845ec03449bc7/comments --data "comments=THIS_IS_MY_COMMENT" 
